@@ -8,4 +8,6 @@ def index(request):
 
 def createTodo(request):
     user_input_str = request.POST['todoContent']
+    new_todo = Todo(content = user_input_str)
+    new_todo.svae()
     return HttpResponse("Create to do " + user_input_str)
