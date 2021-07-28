@@ -6,7 +6,7 @@ from .models import *
 def index(request):
     todos = Todo.objects.all()
     content = {'todos', todos}
-    return render(request, 'my_to_do_app/index.html')
+    return render(request, 'my_to_do_app/index.html', content)
     #return HttpResponse("my_to_do_app first page")
 
 def createTodo(request):
