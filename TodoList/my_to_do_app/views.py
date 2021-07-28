@@ -4,6 +4,8 @@ from django.urls import reverse
 from .models import *
 # Create your views here.
 def index(request):
+    todos = Todo.objects.all()
+    content = {'todos', todos}
     return render(request, 'my_to_do_app/index.html')
     #return HttpResponse("my_to_do_app first page")
 
