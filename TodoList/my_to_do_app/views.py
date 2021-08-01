@@ -16,13 +16,6 @@ def createTodo(request):
     return HttpResponseRedirect(reverse('index'))
     #return HttpResponse("Create to do " + user_input_str)
 
-def deleteTodo(request):
-    done_todo_id = request.GET['todoNum']
-    print("finished todo id is", done_todo_id)
-    todo = Todo.objects.get(id = done_todo_id)
-    todo.delete()
-    return HttpResponseRedirect(reverse('index'))
-
 def doneTodo(request):
     done_todo_id = request.GET['todoNum']
     print("완료한 todo의 id", done_todo_id)
